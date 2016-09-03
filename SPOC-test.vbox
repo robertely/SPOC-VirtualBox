@@ -29,7 +29,7 @@
       <Memory RAMSize="16"/>
       <Paravirt provider="Default"/>
       <Display VRAMSize="9"/>
-      <VideoCapture enabled="true" fps="25"/>
+      <VideoCapture enabled="false" fps="25"/>
       <RemoteDisplay enabled="false">
         <VRDEProperties>
           <Property name="TCP/Ports" value="3389"/>
