@@ -1,6 +1,6 @@
 # SPOC-VirtualBox
 
-VirtualBox configuration files for emulating Ian's bootable floppy
+VirtualBox configuration files for emulating Ian's bootable floppy (Tested on VirtualBox 5.1.4 on Windows 10)
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/quHlMiwTQZs/0.jpg)](https://www.youtube.com/watch?v=quHlMiwTQZs)
 
