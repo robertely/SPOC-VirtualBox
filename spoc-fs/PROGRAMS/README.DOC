@@ -1,0 +1,1795 @@
+Shuttle Portable Computer Flight Procedures Handbook
+
+This is an edited version of the official Shuttle Portable Computer (SPoC)
+Flight Procedures Handbook.  This document applies only to the version of
+SPoC available through NASA Spacelink.
+
+Orbital state vectors required for this program are available for each
+Shuttle mission from NASA Spacelink (Data line 205/895-0028).  Use the
+"M50 Elements" figures.  And remember that SPoC requires figures
+in thousands of feet.  The M50 elements on NASA Spacelink are often
+given in feet.  Don't forget to move the decimal three places to the
+left before entering the figures into SPoC.
+
+The following hardware is required for proper operation of this program:
+
+     IBM PC or compatible with math co-processor installed
+     Hard Drive at location C:
+     Minimum 512K available memory  NOTE:  If you are running software
+       (network software for example) that occupies enough memory to
+       leave less than 512K for SPoC, SPoC will very likely crash.
+
+GRID.EXE, SPOC.BAT, and the PROGRAMS subdirectory, must be located in the
+Drive C: ROOT directory.
+
+To run the SPoC software type SPoC at the C> prompt.
+
+NOTE: The CODE key referred to in this document is the ALT key on IBM PC
+      compatible computers.
+
+NOTE: As you will read in the following document, SPoC was written to
+      run on  a GRID computer--not an IBM-PC.  Before making SPoC available    
+      through NASA Spacelink, we tested it on a variety of IBM-PC and
+      compatible computer configurations with mixed results.  For example,
+      SPoC seemed to run properly on one computer, but its VGA display
+      scrambled the screen making the program unreadable.  Other VGA
+      displays gave no problems.  So if SPoC doesn't run on your
+      particular setup, try it on another computer.
+
+
+
+
+
+SHUTTLE PORTABLE COMPUTER (SPoC)
+
+FLIGHT PROCEDURES HANDBOOK
+
+
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION
+LYNDON B. JOHNSON SPACE CENTER
+HOUSTON, TEXAS
+
+
+
+
+TABLE OF CONTENTS
+
+SECTION      TITLE
+
+1.0          INTRODUCTION
+1.1          SPoC Mission Definition
+1.2          How To Use This Handbook
+
+2.0          HARDWARE
+
+3.0          SPoC USER INTERFACE
+3.1          Modifier and Command Keys
+3.2          Special Key Combinations
+3.3          The Selection Box
+3.4          SPoC Menus
+3.5          SPoC Forms
+3.6          Messages
+
+4.0          OVERVIEW OF SPoC PROGRAMS
+
+5.0          BOOT UP SCREEN
+
+6.0          LAUNCH TIME UPDATE
+
+7.0          GMT UPDATE
+
+8.0          STATE VECTOR UPDATE
+
+9.0          SPoC MAIN MENU
+
+10.0         WORLD MAP
+10.1         World Map Help Menu
+10.2         World Map Display
+10.2.1       Current MET
+10.2.2       AOS/LOS of TDRS Coverage
+10.2.3       AOS/LOS of Ground Communication Site
+10.2.4       Spacecraft Sunrise, Noon, Sunset
+10.2.5       TDRS Coverage
+10.2.6       Earth Day/Night
+10.2.7       Earth Observation Area
+10.2.8       Ground Communication Sites
+10.2.9       Shuttle Bug
+10.2.10      Enlarged F-Stop Display
+10.2.11      Current and Two Predicted Ground Tracks
+10.2.12      Tone Indicator
+10.2.13      Latitude, Longitude and Current F-Stop
+10.2.14      Ascending Node Time
+10.2.15      Earth Observation Site
+10.2.16      Longitude, MET, and Countdown Timer For Next Ascending Node
+10.2.17      Longitude, MET, and Time Since Previous Ascending Node
+10.2.18      Sun Glint Angle and Azimuth
+10.2.19      Sun Glintpoint Area
+10.3         PSAT
+10.4         SITE MANAGER
+10.4.1       SITE MANAGER Exit Options
+10.4.1.1     CODE-D   INVOKE DEFAULT COMMUNICATION SITES
+10.4.1.2     CODE-S   SAVE CHANGES PROCEED TO DAYMAP
+10.4.1.3     CODE-ESC   NO CHANGES PROCEED TO DAYMAP
+10.4.2       SITE MANAGER Functions
+10.4.2.1     CODE-N   SELECT COMMUNICATION NETWORK
+10.4.2.2     CODE-I   SELECT INDIVIDUAL COMMUNICATION SITES
+10.4.2.3     CODE-P   ADD COMMUNICATION SITE
+10.4.2.3.1   Adding a Ground Communications Site
+10.4.2.3.2   Adding a TDRS
+10.4.2.3.3   Editing User Input Ground Site Data
+10.4.2.3.4   Editing User Input TDRS Data
+10.4.2.4     CODE-X   DELETE COMMUNICATION SITES
+10.4.2.5     CODE-CTRL-SHIFT-P   ADD EARTH OBSERVATION SITE
+10.4.2.5.1   Adding An Earth Observation Site
+10.4.2.5.2   Editing User Input Earth Observation Site Data
+10.4.2.6     CODE-CTRL-SHIFT-X   DELETE EARTH OBSERVATION SITES
+
+
+
+APPENDIX     TITLE
+
+A            INITIALIZING THE SPoC
+B            WORLD MAP DEMONSTRATION
+E            SPoC HISTORY
+F            GLOSSARY
+
+
+
+
+SECTION 1.0  INTRODUCTION
+
+The concept of an independent computational capability aboard the Shuttle
+has been operational since STS-1.  Originally the HP41 hand-held
+calculator was employed for this purpose, but it has significant
+limitations.  The SPoC greatly augments HP41 capabilities.  STS-9 was the
+first Shuttle mission manifested with a SPoC, and it proved to be such an
+asset for the crew that a SPoC has been manifested on every subsequent
+Shuttle mission.  In its original role it was used as a situational
+awareness aid, depicting the Orbiter and its ground track over the earth's
+surface.  The SPoC has evolved to provide a backup alternative means of
+obtaining landing opportunities, deorbit targets, and center of gravity
+management procedures.  These targets and procedures are only utilized in
+the event of a total loss of communications with the ground or a time
+critical systems failure during a loss of communication period requiring
+an emergency deorbit before ground assistance can be provided.  Nominally,
+the SPoC is unstowed and set up during the post insertion time frame and
+remains active until entry interface minus 20 minutes.
+
+The SPoC saves Mission Control Center (MCC) personnel time and resources
+by eliminating need to routinely transmit such data as Aquisition of
+Signal/Loss of Signal (AOS/LOS) times via voice or teleprinter.  During
+the mission, the Flight Dynamics Officer (FDO) will take SPoC system
+questions in the MCC Mission Operations Control Room (MOCR) and pass them
+to the SPoC Team if necessary.
+
+
+1.1 SPoC Mission Definition
+
+The SPoC is a portable "lap top" microcomputer providing the crew and
+mission operations personnel with an independent computational and display
+facility, enhancing productivity and reliability.  This microcomputer is
+mandatory for flight because of the crew support it provides.  The SPoC
+was designated as noncritical hardware by Configuration Control Board
+Directive 1253 in 1983.  This classification was reaffirmed in 1987 by
+On-Orbit Flight Techniques Panel Meeting #82 [ref. NASA memo DA8-88-04
+(FT)].  Currently, there are four major roles for the SPoC.
+
+a) Provide automated cues for such events as upcoming ground communication
+times, earth observation site availability, sunrise and sunset times,
+nodal  crossings, orbiter ground track, and location over the earth's
+surface.
+
+b) Provide a backup alternative means of obtaining landing opportunities,
+deorbit targets, and center of gravity management procedures in the event
+of a total loss of communications with the ground or a time-critical
+systems failure during a loss of communication period requiring an
+emergency deorbit before ground assistance can be provided.
+
+c) Provide computational and display support for special purpose
+applications on a flight-specific basis (e.g. the Orbit Refueling System
+{ORS} and the Gravity Gradient Free Drift programs).
+
+d) Provide mission status and contingency deorbit support in the Emergency
+Mission Control Center (EMCC).
+
+
+1.2 How To Use This Handbook
+
+This handbook relates procedures and concepts associated with SPoC
+operation.  Acronyms and other terms pertinent to this discussion, but
+whose definitions may not be apparent from context, are defined in
+APPENDIX F (GLOSSARY).  As a convention, the names of SPoC applications
+will be in capitals.  A brief history of the SPoC is presented in Appendix
+E.
+
+If you are interested in operating SPoC immediately, proceed to
+Appendix A, INITIALIZING THE SPoC, for your first SPoC session.
+Appendices A through D are designed to provide an introductory overview
+without exercising all SPoC capabilities.  For the location of complete
+and detailed information, consult the Table of Contents.
+
+
+
+SECTION 2.0  HARDWARE
+
+The SPoC has 384k bytes of nonvolatile bubble memory for use in storing
+programs and data.  Four Erasable Programmable Read Only Memory (EPROM)
+slots, located above the keyboard, are user-accessible.  Each SPoC EPROM
+has a 64k byte capacity, providing 256k bytes of Read Only Memory (ROM).
+The SPoC directly accesses 512k bytes of Random Access Memory (RAM).  The
+foldup display is a high resolution electroluminescent flat panel which
+measures 7-and-9/16 by 3-and-3/4 inches (512 pixels by 256 scanlines).
+
+There are four types of keys on the SPoC: alphabetic/numeric keys,
+modifier keys for issuing commands, arrow keys for positioning the cursor,
+and a return key for selection box control.  The memory, display, and
+57-character keyboard are in a magnesium case,  which together weighs
+approximately 10 pounds.  The unit will fit into one-half of a standard
+size briefcase.
+
+SPoC is hosted on a GRiD Compass computer purchased off-the-shelf and
+modified for flight.  A standard lithium battery circuit that provides
+power for the internal clock is replaced by a silver oxide battery and
+equipped with diodes and a fuse to ensure fail-safe operation. The
+internal modem is removed.  Flight displays are fitted with
+electromagnetic interference filters.  This prevents electromagnetic
+interference generated by the electroluminescent display from harming the
+General Purpose Computers (GPCs) or other equipment onboard.  When used
+onboard the Shuttle, SPoC runs on phase A ac power and uses a power cable
+which is compatible with the Orbiter's power outlets.  Finally, the foot
+of a flight SPoC is milled to permit fan exhaust flow when folded up for
+flight operation.
+
+
+SECTION 3.0  SPoC USER INTERFACE
+
+SPoC applications have been designed for similarity in appearance and
+operation.  Utilization of menus and forms allows the user to select,
+input, edit, and execute without unnecessary typing.  Menus permit the
+user to select a single item for execution, while forms permit the user to
+input several data values on one display.  Prompts appear at the bottom of
+the screen, as an aid to the user.  When appropriate, error messages also
+appear at the bottom of the screen instructing the user how to correct
+erroneous inputs.
+
+NOTE: Messages are displayed on the screen in inverse video.  In this
+document, messages displayed on screen images will appear as black
+characters against a white background.  This is done for readability.
+
+
+"3.1 Modifier and Command Keys"
+
+Modifier keys include the "CODE" keys, "SHIFT" keys, and the "CONTROL"
+key.  The "CODE" keys and "SHIFT" keys are located at the lower left and
+lower right of the keyboard.  The "CONTROL" key is located at the lower
+left corner of the keyboard.  The "RETURN" key, "ESCAPE" key, and any
+other keys that invoke a menu option are command keys.  The most often
+used modifier keys are the "CODE" keys. To execute any menu option or to
+accept the settings in a form, the user must hold down a modifier key(s)
+and then press the appropriate command key.
+
+"CAUTION": SPoC EXPECTS THE COMMAND KEY "PRESS" ACTION TO BE BRIEF (NO
+MORE THAN 0.2 SECONDS).  Pressing a command key for finite intervals may
+issue multiple instructions with unpredictable results.
+
+
+"3.2 Special Key Combinations"
+
+Throughout the remainder of this handbook, the following convention will
+be followed.  "CODE-[key]" will indicate that the "CODE" key is held down
+until the "[key]" is pressed.  As an example, "CODE-RETURN" indicates that
+the user holds down the "CODE" key until the "RETURN" key is pressed.
+"CODE-ESCAPE" indicates that the "CODE" key is held down until the
+"ESCAPE" key is pressed.  "CODE-M" indicates that the "CODE" key is held
+down until ""M"" is pressed.  "CODE-CTRL-SHIFT-N" indicates that the
+"CODE" key and the "CTRL" key are held down until ""N"" is pressed.  A
+menu item will be executed or form settings will be accepted only if a
+"CODE-[key]" combination is pressed.  The "CODE-RETURN" combination
+executes the menu option selected or accepts the form settings selected.
+The "CODE-ESCAPE" combination has a special function.  To exit a menu
+without executing any of the displayed options or to exit a form without
+modifying the form settings, press "CODE-ESCAPE".  If the user presses
+"CODE-ESCAPE", program control returns to the previously displayed screen.
+If "CODE-ESCAPE" is pressed at the main menu of a program, the program is
+exited and control returns to the SPoC Main Menu, which displays the
+available applications.  A "CODE-ESC" from the SPoC Main Menu is ignored.
+
+
+"3.3 The Selection Box"
+
+The selection box is a moving rectangular outline that encloses the
+current option or setting.  In a menu, the selection box identifies the
+option that will be executed when the user presses "CODE-RETURN".  In a
+form, the selection box identifies data currently being modified.
+Movement of the selection box is controlled by the "RETURN" key.  Each
+time the "RETURN" key is pressed, the selection box advances to the next
+option.  If the "RETURN" key is pressed while the selection box is located
+on the last option of the menu, the selection box will advance to the
+first option on the menu.
+
+If the menu in receives a "CODE-RETURN" with the selection box located on
+the first option, the WORLD MAP application will be executed.  Press the
+"RETURN" key once, and the selection box advances to the next option.
+
+If the menu receives a "CODE-RETURN" with the selection box located on the
+second option, STATE VECTOR UPDATE will be executed.
+
+"3.4 SPoC Menus"
+
+SPoC menus permit the user to select one option to be executed with a
+minimum of keystrokes.  To select an option, press the "RETURN" key
+repeatedly until the selection box is located on the option to be
+executed.  Press "CODE-RETURN" to execute the option.  There is an
+alternate method of selecting and executing an option from a menu.  Press
+"CODE-[key]", where "[key]" is the designated letter for the option to be
+executed.  Using the SPoC Main Menu as an example, DEORBIT can be selected
+by pressing the "RETURN" key three times to locate the selection box on
+the menu option DEORBIT.  DEORBIT is then executed by pressing
+"CODE-RETURN".  Using the alternate method, DEORBIT can be selected and
+executed by pressing "CODE-D" regardless of where the selection box is
+currently located.
+
+
+"3.5 SPoC Forms"
+
+SPoC forms permit the user to enter or edit data for one or more items.
+Forms are different from menus for these reasons:
+
+a) Forms let users change the settings of several items.  Menus let users
+   select only one option.
+
+b) Users may input their own settings to forms.  Many forms do not limit
+users
+   to predefined choices.
+
+c) When users press "CODE-RETURN", they accept the settings of all form
+items,
+   not just the outlined setting.
+
+A form consists of the following components.
+
+"Items": labels which identify data to be modified.  Each item has a
+setting associated with it.
+
+"Settings": actual values the user has typed, chosen from the choice band,
+or received by default.  These settings are either choice or editable
+fields, depending on the application.
+
+"Selection box": moving indicator that surrounds the setting currently
+being modified.  "RETURN" moves it down and "SHIFT-UPARROW" moves it up.
+
+"Choice band": located at the top of the form, it may be configured in one
+of three ways.  If there are choices for the current item, the choices are
+displayed there.  If the item is an editable item, the choice band may be
+blank or contain pertinent information with the edit prompt.
+
+"Choices": predefined values for a setting, which appear in the choice
+band.  The highlighted choice appears within the selection box
+automatically.
+
+"Highlighted box": indicates the choice that appears in the selection box,
+when choices are available.  Pressing the arrow keys moves the highlighted
+box among choices.  Horizontally grouped choices utilize the "LEFTARROW"
+and "RIGHTARROW" keys for movement, while vertically grouped choices are
+selected with the "UPARROW" and "DOWNARROW" keys.  If the item is an
+editable item, the highlighted box, if displayed, will contain pertinent
+information and the edit prompt.
+
+A setting is editable if there are no choices listed in the choice band.
+In this case, the edit prompt appears in the selection box as a small
+flashing triangular field.  A setting is a choice setting if there are
+choices listed in the choice band.
+
+To change data for an editable setting, use the "LEFTARROW" and
+"RIGHTARROW" keys to locate the flashing edit prompt.  The following
+actions are possible on all data left of the prompt.
+
+1) Press the "BACK SPACE" key to erase the rightmost character of data.
+2) Press "CODE-BACK SPACE" to erase the rightmost word of data.
+3) Press "CODE-SHIFT-BACK SPACE" to erase all data.
+
+Data may be inserted right of the flashing prompt by pressing the
+appropriate keys.  Once satisfied with the settings, press "CODE-RETURN"
+to incorporate all settings and proceed to the next form or menu.  To exit
+a form without accepting any new settings, press "CODE-ESC".  Upon
+pressing "CODE-ESC", the former item settings are restored and the
+previous form or menu will be displayed.
+
+
+"3.6 Messages"
+
+There are three types of SPoC messages.
+
+1) Prompts
+2) Error messages
+3) Informative messages
+
+As an aid to the user, each SPoC menu or form has prompts displayed at the
+bottom of the screen.  Information provided by prompts will inform the
+user what action should be taken next.
+
+Error messages provide information for correcting erroneous user inputs.
+
+Informative messages provide status on what action is currently being
+taken.  Informative messages require no user action.
+
+
+
+
+SECTION 4.0  OVERVIEW OF SPoC PROGRAMS
+
+In this section, a high level overview of SPoC software will be presented.
+There are five operating modes for SPoC software: InFlight, Debug,
+Development, SmartDemo, and DummyDemo.
+
+This document pertains only to the InFlight mode.
+
+
+"LAUNCH TIME UPDATE"
+
+During SPoC initialization, the actual launch Greenwich Mean Time (GMT)
+can be input to update the launch time expected premission.  The launch
+time is stored in bubble memory and used to compute Mission Elapsed Time
+(MET).
+
+
+"GMT UPDATE"
+
+Current GMT can be updated in SPoC's internal clock.  The internal clock
+is maintained by an internal battery during periods when SPoC power is
+OFF.
+
+
+"STATE VECTOR UPDATE"
+
+This program allows the user to input position and velocity vectors in the
+Mean of 50 (M50) coordinate system.  These vectors are obtained from the
+GPC Memory Page and are written to bubble memory for access by other
+programs.
+
+
+"SPoC EXECUTIVE"
+
+The SPoC EXECUTIVE program displays the SPoC Main Menu from which the user
+may select the application desired.  Upon exiting any program selected
+from the SPoC Main Menu, program control returns to the SPoC Main Menu.
+
+
+"WORLD MAP"
+
+The SPoC presently runs WORLD MAP as its primary program.  A graphics
+display of a world map is overlaid by the Orbiter's current trajectory
+status.  The following information/functions are available.
+
+        Current MET
+        Fixed coastline and Spaceflight Tracking and Data Network (STDN)/
+        Tracking and Data Relay Satellite (TDRS) coverage graphics
+        Day and night areas on the earth's surface
+        AOS/LOS and identification of next/current ground communication site
+        AOS/LOS and identification of next/current TDRS coverage
+        Current and two predicted ground tracks
+        Current position of the Orbiter on the world map
+        AOS of the next earth observation site
+        AOS of future earth observation sites
+        Current F-stop
+        F-stop for the selected earth observation site
+        Predicted Site Acquisition Table (PSAT) Display
+        Table of TDRSS AOS/LOS
+        Communication/Earth Observation site reconfiguration
+        Latitude and longitude of the Orbiter
+        Time to Orbiter sunrise, noon, or sunset
+        Sun glint position on the world map
+        Sun glint look angles
+        Longitude and MET of the next/previous ascending node
+        Time until/from the next/previous ascending node
+
+SECTION 5.0  BOOT UP SCREEN
+
+When SPoC is turned ON, the Boot Up Screen is displayed after several
+seconds.  At the bottom center of this screen will be displayed the
+message:
+
+Boot in Progress
+Please Wait
+
+The contents of the rest of the screen will indicate:
+
+    1) Specific or Generic Flight Load
+    2) Flight or Training Load
+    3) Version Number
+
+After the operating system has been loaded, the Boot Up Screen will be
+erased.  The following message will be displayed at the bottom of the
+screen while SPoC EXECUTIVE searches for the necessary applications.
+
+"Searching for all the necessary SPoC programs"
+
+Next, SPoC EXECUTIVE will search for necessary data files.  The following
+message will be displayed.
+
+
+"Searching for all the necessary SPoC data files"
+
+
+Upon completion of the data file search, the LAUNCH TIME UPDATE form will
+be displayed.  If this form does not appear, a fatal error has been
+detected in the current SPoC software configuration by SPoC EXECUTIVE.
+
+
+
+
+SECTION 6.0  LAUNCH TIME UPDATE
+
+This program allows the user to update the GMT of launch.  Upon completion
+of the boot cycle, the LAUNCH TIME UPDATE form (FIGURE 6.1) is displayed.
+Initial settings displayed indicate nominal launch time.  These settings
+can be updated by the user in the event of a launch delay.
+
+If the launch form settings are correct, press "CODE-RETURN".  Otherwise,
+correct any erroneous data.
+
+Acceptable inputs for LAUNCH TIME UPDATE FORM:
+   YEAR    - 1983 through 1999
+   DAY     - 1 through 365 in common years, 1 through 366 in leap years
+   HOUR    - 0 through 23
+   MINUTE  - 0 through 59
+   SECOND  - 0 through 59
+
+Possible Error Messages:
+    1) "ERROR: Time parameter(s) input incorrectly"
+
+   Problem:  One or more of the settings are not within acceptable limits
+or are not formatted as integers.
+
+       Solution: The symbol "->" will appear next to out-of-range or
+improperly formatted settings.  Replace erroneous data with good data.
+
+
+
+
+SECTION 7.0  GMT UPDATE
+
+
+After pressing "CODE-RETURN" from the LAUNCH TIME UPDATE form, the GMT
+UPDATE form will automatically appear.  This form can also be accessed
+from the SPoC Main Menu.  The time displayed in this form is used to set
+the internal SPoC clock when "CODE-RETURN" is pressed.  The GMT will have
+to be updated to correct internal clock drift.  SPoC clock drift will
+average approximately five seconds per day.
+
+Acceptable inputs for GMT UPDATE form:
+      DAY    - 1 through 365 in common years, 1 through 366 in leap years
+      HOUR   - 1 through 23
+      MINUTE - 1 through 59
+      YEAR   - 1980 through 1999
+
+Possible Error Messages:
+1) "ERROR: Time parameter( s ) input incorrectly"
+
+Problem: The settings for the items listed in the error message are not
+within acceptable limits.
+
+Solution: The symbol "->" will appear next to out-of-range settings.
+Replace data that are not within acceptable limits.
+
+Possible Caution Messages:
+1) "CAUTION: Vector more than 2 days old"
+
+Problem: SPoC GMT and the current SPoC state vector time tag are
+incompatible.  The state vector time tag is two days older than
+current SPoC GMT.
+
+Solution: If GMT settings are incorrect, press "CODE-ESC" to
+              reinitialize the form.  Correct erroneous data.
+
+         If GMT settings are correct, press "CODE-RETURN".  The state
+         vector time tag settings can be updated in the STATE VECTOR UPDATE
+         form.
+
+2) "CAUTION: Vector is in the future"
+
+Problem: SPoC GMT and the current SPoC state vector time tag are
+         incompatible. The time tag for the current SPoC state vector is
+         in the future.
+
+Solution: If GMT settings are incorrect, press "CODE-ESC" to
+          reinitialize the form.  Correct erroneous data.
+
+        If GMT settings are correct, press "CODE-RETURN".  The state
+        vector time tag settings can be updated in the STATE VECTOR UPDATE
+        form.
+
+
+
+SECTION 8.0  STATE VECTOR UPDATE
+
+The STATE VECTOR UPDATE form allows users to update the SPoC state vector.
+This form will automatically appear after pressing "CODE-RETURN" from the
+GMT UPDATE form during the SPoC initialization sequence.  STATE VECTOR
+UPDATE can also be accessed from the SPoC Main Menu.
+
+Components of the previously input time tag and state vector are initially
+displayed in the STATE VECTOR UPDATE form.  Prelaunch, a predicted nominal
+post-OMS-2 state vector is loaded into the SPoC.
+
+In OPS 2, components of the current state vector are provided by the GPCs
+using the GNC SPEC 34 Orbit Targeting display.  Remember, values displayed
+on the CRT are continuously updated.  Press SPEC to freeze the display.
+The time tag, along with position and velocity components, can now be
+entered into the SPoC STATE VECTOR UPDATE form.
+
+In OPS 3, components of the current state vector are provided by the GPCs
+using the GNC SPEC 0 GPC Memory display.  SPEC 0 item entries are listed
+in the Reference Data Book Flight Supplement.  After the six state vector
+components have been requested and displayed, press SPEC to freeze the
+display.  The time tag, along with position and velocity components, can
+now be entered into the SPoC STATE VECTOR UPDATE form.  Note: The GPC time
+tag displayed with the state vector may have up to a 1.8 second delta from
+the state vector's true time tag.  This is due to differing update rates
+for these quantities on the GPC Memory display.
+
+When settings in the form reflect the frozen SPEC 34 (SPEC 0 in OPS 3),
+press "CODE-RETURN".  The inclination, HA, and HP are displayed.  This
+serves as a data check for state vector inputs.  If values displayed are
+reasonable, press "CODE-RETURN" and the Main Menu will be displayed.
+
+If values are not reasonable, press "CODE-ESC" and the STATE VECTOR UPDATE
+form will be reinitialized.  Correct any erroneous state vector settings
+and press "CODE-RETURN".  Again the inclination, HA, and HP will be
+displayed.  If the values displayed are reasonable, press "CODE-RETURN".
+Otherwise, press "CODE-ESC" to reinitialize the form.
+
+Acceptable inputs for STATE VECTOR UPDATE time tag:
+ DAY (GMT)    - 1 through 366
+ HOUR (GMT)   - 0 through 23
+ MINUTE (GMT) - 0 through 59
+ SECOND (GMT) - 0 through 59
+
+Possible error messages:
+
+
+ 1) "ERROR: Time parameter( s ) input incorrectly"
+
+ Problem: Settings for the GMT items listed in the error message are not
+          within acceptable limits or are not formatted as integers.
+
+ Solution: The symbol "->" will appear next to out-of-range settings.
+           Replace data that are not within acceptable limits.
+
+Possible caution messages:
+
+ 1) "CAUTION: VECTOR MORE THAN 2 DAYS OLD"
+
+ Problem: The SPoC GMT and the current SPoC state vector time tag are
+          incompatible.  The time tag is more than two days old
+          based on the current SPoC MET.
+
+ Solution: If the state vector time tag settings are incorrect, press
+           "CODE-ESC" to reinitialize the form.  Correct erroneous data.
+
+           If the state vector time tag settings are correct, press
+           "CODE-RETURN".  GMT settings can be updated in the GMT UPDATE
+           form.
+
+ 2) "VECTOR IS IN THE FUTURE"
+
+ Problem: The SPoC GMT and the current SPoC state vector time tag are
+          incompatible.  The time tag is in the future based on
+          the current SPoC MET.
+
+ Solution: If the state vector time tag settings are incorrect, press
+           "CODE-ESC" to reinitialize the form.  Correct erroneous data.
+
+           If the state vector time tag settings are correct, press
+           "CODE-RETURN".  GMT settings can be updated in the GMT UPDATE
+           form.
+
+
+
+
+SECTION 9.0  SPoC MAIN MENU
+
+The Main Menu allows users to invoke SPoC applications.  After the SPoC
+initialization sequence has been completed, the SPoC Main Menu will be
+displayed.  This menu will also be displayed upon exiting any SPoC
+application.
+
+Once the user has executed a menu option to select an application, status
+messages will appear at the bottom of the screen.  These messages provide
+status on files being loaded or any processing in progress.
+
+Possible error message:
+
+ "STATE VECTOR TIME IS INCOMPATIBLE WITH GMT"
+
+    Problem: SPoC current MET and the SPoC state vector MET time tag are
+          incompatible.  The time tag for the current SPoC state vector is
+          either in the future, or two days older than the current SPoC MET.
+
+    Solution:
+            A) Press any key and return to the SPoC Main Menu.
+            B) If the displayed MET is correct, select STATE VECTOR UPDATE
+               from the SPoC Main Menu.  Otherwise, proceed to Step D.
+            C) Verify that state vector time tag settings are correct.
+               1) If time tag settings are incorrect, correct erroneous
+                  settings, press "CODE-RETURN", and return to the SPoC Main
+                  Menu.
+               2) If time tag settings are correct, press "CODE-ESC" to
+                  return to the SPoC Main Menu without changing form
+                  settings.
+               3) Proceed to Step F.
+            D) Select SET GMT from the Main Menu.
+            E) Verify that GMT settings are correct.
+               1) If GMT settings are incorrect, correct erroneous
+                  settings and return to the SPoC Main Menu.
+               2) If GMT settings are correct, press "CODE-ESC" to return
+                  to the SPoC Main Menu.
+            F) Make selection from the Main Menu.
+
+SECTION 10.0  WORLD MAP
+
+
+SITE MANAGER Main Menu
+
+The first time WORLD MAP is selected from the SPoC Main Menu, the SITE
+MANAGER Main Menu will be displayed.  SITE MANAGER is a WORLD MAP function
+which will be detailed in Section 10.4.  For now, execute the first menu
+item "INVOKE DEFAULT COMMUNICATION SITES" and proceed to the WORLD MAP
+display.
+
+
+WORLD MAP serves as a crew aid which provides a situation display, various
+timers, and tables.  The situation display includes a map with a longitude
+range from 180 degrees West to 180 degrees East, and a typical latitude
+range from 65 degrees North to 65 degrees South.  A map with any valid
+latitude range can be provided by the SPoC Team upon request.
+
+
+10.1 World Map Help Menu
+
+The WORLD MAP Help Menu may be invoked by pressing "CODE-?" with the WORLD
+MAP display active.  This menu provides the "CODE-[key]" combinations
+associated with each WORLD MAP function.  WORLD MAP functions may be
+invoked from the Help Menu, or may be invoked from the WORLD MAP display
+directly with the proper "CODE-[key]" input.  To return to the WORLD MAP
+Display, press "CODE-ESC".
+
+
+10.2 World Map Display
+
+The contents of the WORLD MAP Display are described in detail below.
+
+Following is a rough drawing of the World Map Display screen.  The numbers in
+parentheses represent the ITEMS described in the text below.
+
+       +==========================================================+
+       |   (1) |       |  (2)     | (3)     |             | (4)   |
+       |----------------------------------------------------------|
+       |                                                          |
+       |                                                          |
+       |                                                          |
+       |             [Picture of earth showing day and night,     |
+       |                  orbital paths and current location of   |
+       |                  shuttle, earth-based tracking station   |
+       |                  locations and coverage areas, earth     |
+       |                  observation opportunities.]             |
+       |                                                          |
+       |                                                          |
+       |                               +-----+                    |
+       |                               |     |                    |
+       |                               | (10)|                    |
+       |(12)                           |     |                    |
+       |----------------------------------------------------------|
+       |  (15) |           |    (13,16,17,18) |        |(14,16,17)|
+       +==========================================================+
+
+10.2.1 Current MET (Item 1)
+
+DD/HH:MM:SS fields will update approximately every second and are
+displayed continuously.  These are calculated based on the current GMT and
+the GMT of launch.
+
+10.2.2 AOS/LOS of TDRS Coverage (Item 2)
+
+The ID and countdown time to AOS or LOS of TDRS coverage is displayed in
+this window.  If multiple satellites have overlapping coverage, the AOS
+countdown time to the first TDRS will be displayed.  After AOS of the
+first TDRS, the ID and LOS of the last TDRS with overlapping coverage is
+displayed.  "STAND BY" will be displayed in this window until AOS/LOS
+times have been calculated.
+
+10.2.3 AOS/LOS of Ground Communication Site (Item 3)
+
+This window displays the ID, radio frequency band(s), and countdown time
+to AOS or LOS of a ground communication site.  AOS and LOS are defined as
+an elevation of the Orbiter, viewed from the ground site, of 0.0 degrees.
+Neither terrain masking nor atmospheric refraction are considered in this
+calculation.  If sites have overlapping coverage, the AOS countdown time
+of the first site will be displayed.  After AOS of the first site, the ID
+and LOS of the last site in this overlapping coverage is displayed.  Then
+the radio frequency band(s) displayed will be that of the currently
+acquisitioned site(s).  "STAND BY" will be displayed in this window until
+AOS/LOS times have been calculated.
+
+10.2.4 Spacecraft Sunrise, Noon, Sunset (Item 4)
+
+The countdown time to spacecraft sunrise ("SR"), noon ("SN"), or sunset
+("SS") is displayed in this window.  If the time to spacecraft
+sunrise/sunset or noon is greater than 100 minutes, the timer will
+countdown from 99:59 to 99:00 then cycle until 99:59 is the correct time.
+Shuttle sunrise and sunset are defined with respect to the upper limb of
+the sun with a fixed bias to offset the effects of refraction.  Press
+"CODE-S" to toggle between spacecraft sunrise/sunset and noon.  Spacecraft
+sunrise, noon, and sunset functions share this window on a mutually
+exclusive basis.
+
+10.2.5 TDRS Coverage (Item 5)
+
+Limits of TDRS coverage are displayed assuming average nominal orbital
+altitude for a flight.
+
+10.2.6 Earth Day/Night (Item 6)
+
+The sunlight terminator separates day/night regions on earth's surface and
+is updated in real time.  The region in daylight is displayed with inverse
+video.
+
+10.2.7 Earth Observation Area (Item 7)
+
+The flashing rectangle highlights an earth observation site.  The area
+approximates extent of the site to be observed.  A site is acquired when
+any part viewed from the Orbiter is within 40 degrees of the current
+nadir.  The next available site will initially be displayed.  Press
+"CODE-F" to move forward one available site at a time until the last
+predicted ground track point is encountered.  To return to the next
+available site, press "CODE-R".  The displayed site is shown until
+acquired, then the next site is highlighted with a flashing rectangle.
+
+10.2.8 Ground Communication Sites (Item 8)
+
+Limits of selected ground communication sites, with terrain masking, are
+displayed assuming average nominal orbital altitude for a flight.
+
+10.2.9 Shuttle Bug (Item 9)
+
+The nose of the flashing Shuttle Bug indicates current position of the
+Orbiter.  Every thirty seconds, the Shuttle Bug's position is updated to
+the next predicted ground track point.
+
+10.2.10 Enlarged F-Stop Display (Item 10)
+
+For ease of viewing, the current camera F-Stop is enlarged and displayed.
+This is the same camera F-Stop value described in Item 13.  The enlarged
+F-Stop display may be toggled ON or OFF by pressing "CODE-CTRL-SHIFT-F".
+For high inclination orbits, position of the enlarged F-Stop display will
+vary slightly.  This is done to avoid display conflicts with predicted
+ground tracks and the Shuttle Bug.
+
+10.2.11 Current and Two Predicted Ground Tracks (Item 11)
+
+Predicted ground tracks are updated when the Shuttle Bug reaches the
+predicted ground track point 5400 seconds (90 minutes) from the first.
+The Shuttle Bug then occupies the first ground track point in a series
+extending 4.5 hours into the future.  Adjacent ground track points are
+separated in time by 30 seconds.
+
+10.2.12 Tone Indicator (Item 12)
+
+"ON" indicates a tone will be generated when the currently displayed earth
+observation site countdown timer reaches two minutes.  "OFF" indicates no
+tone will be generated.  The default setting is "ON".  The tone indicator
+may be toggled "ON" and "OFF" by pressing "CODE-T".
+
+10.2.13 Latitude, Longitude, and Current F-Stop (Item 13)
+
+The Orbiter's current latitude, longitude, and the camera F-Stop required
+for an average albedo target at the current spacecraft nadir are updated
+once every 30 seconds.  "CODE-L" immediately updates this display and
+toggles it from dynamic to frozen. While frozen, the display will flash
+approximately once/second.  This display window is shared, on a mutually
+exclusive basis, with items 16, 17, and 18.
+
+10.2.14 Ascending Node Time (Item 14)
+
+This window displays elapsed time since previous ascending node or
+countdown to the next ascending node.  The display is controlled in
+conjunction with items 16 and 17.
+
+10.2.15 Earth Observation Site (Item 15)
+
+The site ID is displayed along with the countdown time to acquisition of
+the displayed earth observation site.  The program searches for
+acquisition only.  Once acquisition is achieved, the program will search
+for acquisition of the next available site.  If no earth observation site
+has been found within the predicted ground tracks, "*****  XX:XX" will be
+displayed.  The F-Stop for this site is also displayed.  This F-Stop is
+based on a predetermined albedo for the current site, a set film and
+shutter speed, and the computed sun angle.  Since F-Stop values are
+computed in discrete 1/2 F-Stop steps, a difference of 1/2 F-Stop between
+the SPoC value and a premission value is not unusual.
+
+SPoC observation site F-Stops are computed for acquisition, but the
+premission albedos consider an average across the entire site.  For sites
+with significant physical size, this can result in F-Stop differences of
+as much as 1 and 1/2 to 2 full F-Stops in extreme cases.
+
+10.2.16 Longitude, MET, and Countdown Timer For Next Ascending Node (Item
+16)
+
+A keyboard input of "CODE-N" will display the longitude and MET of the
+next ascending node in the bottom center window, replacing any data
+previously displayed there.  Also the countdown time for this node will be
+displayed in the Ascending Node Time window (Item 14).  This function
+shares the bottom middle window, on a mutually exclusive basis, with Items
+13, 17, and 18.
+
+10.2.17 Longitude, MET, and Time Since Previous Ascending Node (Item 17)
+
+A keyboard input of "CODE-CTRL-SHIFT-N" will display the longitude and MET
+of the previous ascending node in the bottom center window, replacing any
+data previously displayed there.  Elapsed time since the previous
+ascending node will also be displayed in the Ascending Node Time window
+(Item 14).  This function shares the bottom middle window, on a mutually
+exclusive basis, with Items 13, 16, and 18.
+
+10.2.18 Sun Glint Angle and Azimuth (Item 18)
+
+A keyboard input of "CODE-G" will display the sun glintpoint
+angle-of-reflection and azimuth relative to the Orbiter.  These data are
+displayed in the bottom center window, replacing any data previously
+displayed there. "GLINT ANGL" is the angle-of-reflection of the sun's
+image off the Earth's surface.  "AZ" is the angle measured from the
+vehicle true heading in the Orbiter local horizontal plane to the
+glintpoint azimuth and accumulated in the direction "east of north".  In
+other words, the difference "true azimuth of the sun glintpoint minus
+current Orbiter true heading" is "AZ".  Sun glint data are displayed only
+if the "GLINT ANGL" is between 9.99 degrees and 80.21 degrees.  Otherwise,
+Xs are displayed in place of the data.  This function shares the bottom
+middle window, on a mutually exclusive basis, with Items 13, 16, and 17.
+
+10.2.19 Sun Glintpoint Area (Item 18a)
+
+A "CODE-G" keyboard input will also graphically display the sun glintpoint
+relative to the Shuttle by flashing a small square on the WORLD MAP.
+
+
+10.3 PSAT
+
+A Predicted Site Acquisition Table (PSAT) is available for the current and
+two predicted ground tracks.  Press "CODE-P" to call up the PSAT Display.
+There are two windows for this display.  The upper window displays TDRS
+data, while the lower window displays ground site data.  Each window has a
+light bar which serves as an aid for reading data across a row.  Press
+"UPARROW" and "DOWNARROW" to control light bar movement in the lower
+window.  Press "SHIFT-UPARROW" and "SHIFT-DOWNARROW" to control light bar
+movement in the upper window.
+
+If there are more lines of data than can be displayed in a PSAT window at
+one time, only sites with LOS in the future will be visible when the
+display appears.  Users may scroll up or down to view data not currently
+in the window.  Small up/down arrows indicate if more data are available.
+Users may scroll in the direction of the arrows to view the additional
+data.  When the bottom or top of the table is reached, the appropriate
+arrow will vanish.
+
+"More Data Arrows": Indicate that more data are available above or below
+those currently visible.
+
+"LOS Indicators": Indicate the site has an LOS in the past.
+
+"Light Bar": Visual aid in reading across a row.  May be moved with the
+arrow keys as described above.
+
+"XX/XX:XX:XX    XX:XX": Indicates the data are not currently available.
+
+To return to the WORLD MAP Display, press "CODE-ESC"
+
+
+10.4 SITE MANAGER
+
+SITE MANAGER allows users to:
+
+* 1) Turn communication sites ON or OFF.
+* 2) Add/edit communications site data.
+* 3) Delete user input communications sites.
+* 4) Add/edit earth observation site data.
+* 5) Delete user input earth observation sites.
+
+
+On the first call to WORLD MAP from the SPoC Main Menu, the SITE MANAGER
+Main Menu will be displayed.  During subsequent calls to WORLD MAP,
+control will pass directly to the WORLD MAP Display.  SITE MANAGER may
+also be invoked from the WORLD MAP Help Menu or by pressing "CODE-E" from
+the WORLD MAP Display.
+
+The SITE MANAGER Main Menu is displayed on the first call to WORLD MAP as
+a reminder that the previous user may have reconfigured communication or
+earth observation sites.  This allows users easy access to verify
+configuration of the sites.
+
+If a communication site is ON, the site will be included in AOS/LOS
+searches.  If it is OFF, the site will not be included in AOS/LOS
+searches.  The AOS/LOS search drives the WORLD MAP AOS/LOS countdown
+windows and PSAT Display.  SPoC premission site data cannot be altered or
+deleted by users.  Only user input site data may be altered or deleted by
+users.
+
+10.4.1 SITE MANAGER Exit Options
+
+Three options on the SITE MANAGER Main Menu will exit SITE MANAGER and
+proceed to the WORLD MAP program.
+
+10.4.1.1 CODE-D     INVOKE DEFAULT COMMUNICATION SITES
+
+The communication site list will revert to the premission default
+configuration.  Any user input sites marked for deletion will be deleted.
+All other sites, including user input sites, will be turned OFF.  SITE
+MANAGER is exited and the WORLD MAP Display appears.
+
+10.4.1.2 CODE-S     SAVE CHANGES PROCEED TO DAYMAP
+
+Any changes made during this SITE MANAGER session will be saved.  User
+input sites marked for deletion will be deleted.  SITE MANAGER is exited
+and the WORLD MAP Display appears.
+
+10.4.1.3 CODE-ESC     NO CHANGES PROCEED TO DAYMAP
+
+Any changes made during this SITE MANAGER session will be ignored.  SITE
+MANAGER is exited and the WORLD MAP Display appears.  "NOTE": If changes
+were made, users will be warned with the following message:
+
+"PRESS CODE-RETURN TO EXIT SITE MANAGER WITHOUT SAVING CHANGES"
+              "PRESS CODE-ESC TO RETURN TO SITE MANAGER"
+
+This prevents users from inadvertently losing any changes that may have
+been made during this SITE MANAGER session.
+
+
+10.4.2 SITE MANAGER Functions
+
+10.4.2.1 CODE-N     SELECT COMMUNICATION NETWORK
+
+This option displays the Network form which allows users to configure
+entire communication networks "ON" or "OFF".  If "ON" is selected, all
+communications sites in that network will be turned "ON".  Otherwise, all
+sites for that network will be turned "OFF".
+
+
+10.4.2.2 CODE-I   SELECT INDIVIDUAL COMMUNICATION SITES
+
+This option displays the Communication Site Selection form.  Users may
+configure each communication site "ON" or "OFF".  Sites configured
+premission as "ON" are indicated by "DEF" (default) in the fourth column
+from the left.  Sites are grouped by site type in alphabetical order.
+TDRS satellites are at the top of the form, followed by STDN and Remote
+Tracking Station (RTS) sites.  If any user input sites have been added,
+they will appear at the bottom of the form.
+
+10.4.2.3 CODE-P     ADD COMMUNICATION SITE
+
+This option allows users to add or edit user input site data.  Site data
+loaded premission can not be altered by users.  Only user input site data
+may be altered.
+
+The Site ID form appears after "CODE-P" is pressed.  A site name composed
+of three alpha characters is the first item to be entered on this form.
+In the following examples, "ABC" will be used as the site name.  The
+characters entered may be either upper or lower case.
+
+The second Site ID form item allows users to select whether inputs pertain
+to a ground site or TDRS.
+
+Acceptable inputs for the Site ID form:
+
+* Site Name : Exactly three alphabetic characters.
+
+Possible error messages:
+
+* 1) "IMPROPER COMMUNICATION SITE ID (REENTER ID)"
+
+* Problem: Three alphabetic characters were not entered for the site ID.
+
+* Solution: Enter three alphabetic characters.
+
+* 2)              "DUPLICATE SITE ID"
+*    "IMPROPER COMMUNICATION SITE ID (REENTER ID)"
+
+* Problem: The site ID entered was used for a premission site.
+
+* Solution: Use a different site ID for the input site.
+
+10.4.2.3.1 Adding a Ground Communications Site
+
+If "GROUND SITE" was selected from the Site ID form, the Site Data form
+will appear.  At the top of the form, "ENTERING ABC DATA" is displayed.
+Also notice that the latitude and longitude settings are blank.  Enter the
+latitude and longitude (in decimal degrees).
+
+Select the correct frequency band for this input site with the "LEFTARROW"
+and "RIGHTARROW" keys.
+
+10.4.2.3.2 Adding a TDRS
+
+If "TDRSS" was selected from the Site ID form, the Site Data form will
+appear as shown in.  At the top of the form, "ENTERING ABC DATA" is
+displayed.  Notice that the longitude setting is blank.  Enter the
+longitude (in decimal degrees).
+
+10.4.2.3.3 Editing User Input Ground Site Data
+
+If a site has previously been input and "GROUND SITE" was selected from
+the Site ID form, the Site Data form will appear as shown in.  At the top
+of the form, "EDITING ABC DATA" is displayed.  The form will display site
+data for editing.
+
+10.4.2.3.4 Editing User Input TDRS Data
+
+If a TDRS has previously been input and "TDRSS" was selected from the Site
+ID form, the Site Data form will appear.  At the top of the form, "EDITING
+ABC DATA" is displayed. The TDRS longitude may then be updated.
+
+Acceptable inputs for the Site Data forms:
+* Latitude: -90 through +90 (ground sites only)
+* Longitude: -180 through +360
+
+Possible error messages:
+* 1) "IMPROPER LONGITUDE ( REENTER LONGITUDE )"
+*     "IMPROPER LATITUDE ( REENTER LATITUDE )"
+
+* Problem: The inputs are out of range.
+
+* Solution: Correct erroneous inputs.
+
+10.4.2.4 CODE-X     DELETE COMMUNICATION SITES
+
+Only user input communication sites may be deleted.  To mark one or more
+sites for deletion, select "CODE-X   DELETE COMMUNICATION SITES" from the
+SITE MANAGER Main Menu.  If there are currently any user input sites, the
+Communication Site Deletion form will appear.  If there are currently no
+user input sites, this message will be displayed:
+
+
+"THERE ARE NO "INPUT" SITES TO DELETE
+PRESS ANY KEY TO CONTINUE
+COMMUNICATION SITES"
+
+
+Communication Sites Deletion Form
+
+Note that sites marked for deletion on this form will only be purged from
+bubble memory when "CODE-D" or "CODE-S" is selected from the SITE MANAGER
+Main Menu.  Users may return to the Communication Site Deletion form and
+mark or unmark sites for deletion on multiple occasions before they are
+purged.
+
+User input sites marked for deletion will be accompanied by an asterisk
+when displayed in the Site Selection form.
+
+
+
+10.4.2.5 CODE-CTRL-SHIFT-P     ADD EARTH OBSERVATION SITE
+
+This option allows users to add or edit a user input earth observation
+site.  All user input earth observation sites are point sites.  A point
+site is one point on the earth's surface defined by its latitude and
+longitude.   Sites that are loaded premission cannot be altered by users.
+Only user input site data may be altered.
+
+To add or edit earth observation site data, select "CODE-CTRL-SHIFT-P
+ADD EARTH OBSERVATION SITE" from the SITE MANAGER Main Menu.  The
+Observation Site ID form will be displayed.  For the following examples,
+"T104B" will be used as the site name.
+
+
+After pressing "CODE-RETURN" in the Observation Site ID form, the
+Observation Site Data form  will appear.  The format of the Observation
+Site Data form will vary based on the inputs into the Observation Site ID
+form.
+
+Acceptable inputs for the Observation Site ID form:
+* Site Name : Maximum of five alpha-numeric characters.
+
+Possible error messages:
+* 1) "IMPROPER EARTH OBSERVATION SITE ID (REENTER ID)"
+
+* Problem:  Improper site name was entered.
+
+* Solution: Reenter site name.
+
+* 2)              "DUPLICATE SITE NAME"
+*    "IMPROPER EARTH OBSERVATION SITE ID (REENTER ID)"
+
+* Problem: The site name entered was used for a premission site.
+
+* Solution: Use a different site name for the input site.
+
+
+10.4.2.5.1 Adding An Earth Observation Site
+
+If this is a new site to be added, "ENTERING T104B DATA" is displayed at
+the top of the Observation Site Data form, indicating that data for the
+new site "T104B" are being entered.  Since this is a new site, the form
+settings are blank.  Enter the setting for each item.
+
+10.4.2.5.2 Editing User Input Earth Observation Site Data
+
+If the site name entered into the Site ID form has previously been added,
+the Observation Site Data form will be displayed with "EDITING T104B DATA"
+at the top of the form.  The data for this site will be displayed in the
+form.  Edit the necessary settings.
+
+Acceptable inputs for the Site Data form:
+* Latitude:  -90 through +90
+* Longitude: -180 through +360
+* Albedo:     6 through 18
+
+Possible error messages:
+* 1) "IMPROPER LONGITUDE ( REENTER LONGITUDE )"
+*    "IMPROPER LATITUDE ( REENTER LATITUDE )"
+*    "IMPROPER ALBEDO (REENTER ALBEDO)"
+
+* Problem: The inputs are out of range.
+
+* Solution: Correct erroneous inputs.
+
+10.4.2.6 CODE-CTRL-SHIFT-X     DELETE EARTH OBSERVATION SITES
+
+Only user input earth observation sites may be deleted.  To mark one or
+more sites for deletion select "CODE-CTRL-SHIFT-X   DELETE EARTH
+OBSERVATION SITES" from the SITE MANAGER Main Menu.  If there are
+currently any user input sites, the Observation  Site Deletion form will
+appear.  If there are currently no user input sites, this message will be
+displayed:
+
+
+"THERE ARE NO "INPUT" SITES TO DELETE
+
+PRESS ANY KEY TO CONTINUE
+OBSERVATION SITES"
+
+
+Note that sites marked for deletion on this form will only be purged from
+bubble memory when "CODE-D" or "CODE-S" is selected from the SITE MANAGER
+Main Menu.  Users may return to the Earth Observation Site Deletion form
+and mark or unmark sites for deletion on multiple occasions before they
+are purged.
+
+
+
+
+APPENDIX A--INITIALIZING THE SPoC
+
+
+The following set of instructions leads a user through the procedures to
+initialize the SPoC.  After SPoC initialization is completed, the user may
+proceed to APPENDIX B (WORLD MAP), C (DEORBIT), or D (CGMANAGER) for a
+demonstration of SPoC applications.  Familiarity with basic SPoC operation
+is assumed.  For the user unfamiliar with the SPoC, hardware setup
+procedures for ground operation are found in Section 2.2.  Details of
+basic SPoC operations are contained in Section 3.
+
+When the SPoC is turned on, the Boot Up Screen is displayed after several
+seconds. After the operating system has been loaded, the Boot Up Screen
+will be erased.
+
+Messages will then be displayed informing users that the SPoC EXECUTIVE is
+searching for programs and data files.
+
+Upon completion of the file search, the first initialization form will be
+displayed (LAUNCH TIME UPDATE form).  For this demo, follow the steps
+below to enter the launch date/time, the current SGMT, and state vector.
+
+"LAUNCH TIME UPDATE Form"
+
+1)  Press "CODE-BACK SPACE" to erase old data.
+    YEAR: enter "1988"
+          press "RETURN".
+
+2)  Press "CODE-BACK SPACE" to erase old data.
+    DAY: enter "300"
+         press "RETURN".
+
+3)  Press "CODE-BACK SPACE" to erase old data.
+    HOUR: enter "0"
+          press "RETURN".
+
+4)  Press "CODE-BACK SPACE" to erase old data.
+    MINUTE: enter "0"
+            press "RETURN".
+
+5)  Press "CODE-BACK SPACE" to erase old data.
+    SECOND: enter "0"
+            press "CODE-RETURN".
+
+"GMT UPDATE Form"
+
+6)  Press "CODE-BACK SPACE" to erase old data.
+    DAY (GMT): enter "300"
+               press "RETURN".
+
+7)  Press "CODE-BACK SPACE" to erase old data.
+    HOUR (GMT): enter "0"
+                press "RETURN".
+
+
+8)  Press "CODE-BACK SPACE" to erase old data.
+    MINUTE (GMT): enter "0"
+                  press "RETURN".
+
+9)  Press "CODE-BACK SPACE" to erase old data.
+    YEAR: enter "1988"
+          press "CODE-RETURN".
+
+"NOTE:" If a warning message appears at this point, correct bad data and
+press "CODE-RETURN".
+
+"STATE VECTOR UPDATE Form"
+
+10) Press "CODE-BACK SPACE" to erase old data.
+    DAY (GMT): enter "300"
+               press "RETURN".
+
+11) Press "CODE-BACK SPACE" to erase old data.
+    HOUR (GMT): enter "0"
+                press "RETURN".
+
+12) Press "CODE-BACK SPACE" to erase old data.
+    MINUTE (GMT): enter "0"
+                  press "RETURN".
+
+13) Press "CODE-BACK SPACE" to erase old data.
+    SECOND (GMT): enter "0"
+                  press "RETURN".
+
+14) Press "CODE-BACK SPACE" to erase old data.
+    X POSITION (KFt): enter "-4065.5451"
+                     press "RETURN".
+
+15) Press "CODE-BACK SPACE" to erase old data.
+    Y POSITION (KFt): enter "19478.6516"
+                     press "RETURN".
+
+16) Press "CODE-BACK SPACE" to erase old data.
+    Z POSITION (KFt): enter "-9134.2843"
+                     press "RETURN".
+
+17) Press "CODE-BACK SPACE" to erase old data.
+    X VELOCITY (KFt/SEC): enter "-23.4998543"
+                         press "RETURN".
+
+18) Press "CODE-BACK SPACE" to erase old data.
+    Y VELOCITY (KFt/SEC): enter "-7.6119311"
+                         press "RETURN".
+
+19) Press "CODE-BACK SPACE" to erase old data.
+    Z VELOCITY (KFt/SEC): enter "-5.7686384"
+                         press "CODE-RETURN".
+
+At the bottom of the screen the inclination, HA, and HP are displayed.
+This serves as a data check for state vector inputs.  For the above
+inputs, the following values will be displayed.
+
+INCLINATION = 28.518
+APPROX. ORBIT : HA=166; HP=159
+
+
+20) Press "CODE-RETURN".
+
+The SPoC Main Menu will now be displayed.  The user may select SPoC
+applications for execution.  Step-by-step demos are available for WORLD
+MAP (Appendix B), DEORBIT (Appendix C), and CGMANAGER (Appendix D).  The
+STATE VECTOR UPDATE and SET GMT programs are also available from the SPoC
+Main Menu, and were demonstated during the initialization procedures.
+
+You are now ready to proceed to a SPoC demo of your choice.
+
+
+APPENDIX B--WORLD MAP DEMONSTRATION
+
+
+
+Before exercising WORLD MAP demonstration procedures, the user should
+complete procedures outlined in APPENDIX A (Initializing The SPoC).  The
+SPoC Main Menu should be currently displayed.  The following instructions
+will lead the user through a WORLD MAP demo.
+
+1) Select "DISPLAY WORLD MAP" from the SPoC Main Menu.
+
+The first time WORLD MAP is selected from the SPoC Main Menu, the SITE
+MANAGER Main Menu will be displayed.  SITE MANAGER is a WORLD MAP function
+which may be exercised later during this demo.  For now, continue on to
+the WORLD MAP display.
+
+2) Select "INVOKE DEFAULT COMMUNICATION SITES" from the SITE MANAGER Main
+   Menu.
+
+After a few seconds, the WORLD MAP Display will appear.  Notice that the
+communication site AOS/LOS windows display the words "STAND BY".
+
+As soon as the AOS/LOS search has been completed, windows will display
+AOS/LOS countdown times.
+
+3) Press "CODE-?" to display the WORLD MAP Help Menu.
+
+This menu provides the "CODE-[key]" combinations associated with each
+WORLD MAP function.  WORLD MAP functions may be invoked from the Help
+Menu.  They may be invoked from the WORLD MAP display directly with the
+proper "CODE-[key]" input.
+
+4) To return to the WORLD MAP Display, press "CODE-ESC".
+
+At this time, you may want to explore various WORLD MAP functions.  For a
+detailed explanation of each WORLD MAP function, refer to Section 10.2.
+Section 10.3 details the PSAT Display, and Section 10.4 details SITE
+MANAGER functions.
+
+5) When you are ready to exit WORLD MAP and return to the SPoC Main Menu,
+press "CODE-ESC".
+
+
+
+
+APPENDIX E--SPoC HISTORY
+
+
+
+The concept of an independent computational capability aboard the Shuttle
+has been operational since STS-1.  Originally, an HP41 calculator was
+employed for this purpose.  Data storage and manipulation capabilities,
+absent from the GPC's because of core storage limitations, were provided
+by this hand-held calculator.  Also provided by the HP41 were capabilities
+similar to existing ground-based processors in the event that the Shuttle
+and crew were in a no-communication situation.  As of April 5, 1983 the
+HP41 flight programs included the following:
+
+
+a) The CG program allowed the crew to track current X and Y-CG location as
+a function of MET, OMS, and RCS propellant loadings, and whether payloads
+were berthed or deployed.
+
+
+b) The AOS program supplied the crew with information concerning the next
+time the spacecraft would acquire a communications site.
+
+
+c) The LANDTRACK program provided observation pass information for any
+stored earth observation site.
+
+
+d) The DEORBIT program provided the crew with deorbit maneuver targets in
+the event of total loss of communications with the ground and a
+time-critical systems failure requiring an emergency deorbit.
+
+
+e) The ORBIT program provided the crew with data concerning attitudes and
+rates involved in the star sighting function and with orbit sunrise and
+sunset.
+
+
+f) The ALARM program gave the crew a personalized reminder of upcoming
+events of particular interest by having the calculator sound a tone and
+display a pre-stored message.
+
+
+g) The LANDING program computed data necessary for the approach and
+landing phase of flight.
+
+
+Although the HP41 has proven to be a useful tool, it has a very limited
+memory capacity (only one of the above programs can be stored in memory at
+a time), very limited text displays, and there is no graphics capability.
+
+As new requirements developed for independent computational capabilities
+aboard the Shuttle, the HP41 became inadequate for the task.  To augment
+the hand-held calculator, the SPoC was introduced.  SPoC is an expansion
+of the HP41 calculator concept and enhances independent computation and
+display capabilities by providing more memory, more mass storage, and
+graphic displays. In 1983, the Ascent/Entry Procedures Section of the
+Operations Branch began evaluating microcomputers for onboard
+implementation.  After evaluating several machines, a GRiD microcomputer
+was selected because it met the hardware and software requirements and
+constraints fully.  A proposal was made to the Government Furnished
+Equipment (GFE) Configuration Control Board (CCB) to obtain the necessary
+funding for the project.  The GFE CCB denied the request.  To gain
+necessary support for the project, presentations were made at the branch,
+division, and directorate levels.  After a SPoC presentation was made to
+the Program Office Manager, Glynn Lunny, approval for the SPoC project was
+given. Proposals were again made to the GFE CCB, and on 08/15/83 a Crew
+Related GFE CCB Directive (#3D149) was issued authorizing purchase,
+testing, certification, and preparation for flight of a GRiD Compass
+Computer on STS-9.
+
+Purchased commercially and modified, the original SPoC was a GRiD Compass
+1101 lap top computer.  The Compass 1101 has a 4.75 by 3.5 inch
+electroluminescent screen, 384K bytes of non-volatile bubble memory and
+256K bytes of RAM. Modifications included replacing the internal modem
+with a fan for cooling, since the standard Model 1101 computer uses
+convective cooling.  The lithium battery circuit, which provides power for
+the internal clock while the Compass is not connected to an external power
+supply, had supplemental diodes and a fuse installed to insure failsafe
+operation. A power cable was designed for Orbiter power connector
+compatibility.  EMI tests showed the SPoC was out of specification.  Since
+the out-of-spec condition for SPoC would cause no problems for Orbiter
+systems, communications, or payloads, the Space Shuttle Program
+Requirements Control Board issued a directive (#S23562) to authorize a
+waiver permitting the radiated EMI out-of-spec condition.
+
+SPoC was initially flown on STS-9 as a proof of concept engineering
+evaluation.  During this flight, it proved useful as an aid to crew
+awareness and productivity.  SPoC flight software for STS-9 included
+programs that calculated and/or displayed the following data:
+
+          MET
+          The world map (facsimile of the MCC world map)
+          Day and night areas on the earth's surface
+          AOS/LOS ID of the current/next ground communication site
+          AOS/LOS and ID of current/next TDRSS coverage
+          Current and two predicted ground tracks
+          Current position of the Orbiter on the world map
+          AOS of the next earth observation site
+
+Brewster Shaw, pilot for STS-9, stated "It's really a big asset to know
+where we are all the time."  Since SPoC was such an asset on STS-9, Flight
+Equipment Project Office Configuration Control Board Directive #G1309
+authorized one SPoC and power cord be manifested for STS-11 and subsequent
+missions.
+
+An upgrade occurred in late 1984, with the Compass 1129 replacing the 1101
+for STS-51C and subsequent missions.  The GRiD Compass 1129 is the same
+size as the 1101, with a 4.75 by 3.5 inch electroluminescent screen and
+384K bytes of non-volatile bubble memory.  Improvements gained with the
+1129 include twice as much RAM (512K bytes) and four accessible slots for
+PROM or EPROM chips.  At this time, the necessary hardware and software
+were purchased to develop EPROMs for flight.  Use of socketed PROM and
+EPROM chips was viewed as a possible interim solution for expanded mass
+memory until a mass memory device was certified for flight.  Compass 1129s
+were purchased commercially and modified.  The internal modem was replaced
+with a fan for cooling and an EMI reducing "Tempest" screen was installed.
+For crew safety, the lithium battery which provided power for the internal
+clock was exchanged for a replaceable silver oxide battery and a clock
+reset circuit.  Also the foot was milled out to promote internal
+ventilation while in the closed position for flight operation.
+
+In 1985, the SPoC was upgraded to a GRiD Compass 1139 for STS-51G and
+subsequent missions.  The GRiD Compass 1139 is similar to the 1129, having
+the same memory capacity.  It is an improvement over the 1129 because it
+has a larger electroluminescent screen (7.5 by 3.5 inches) and a standard
+internal fan for cooling. Like the 1129, this unit was purchased
+commercially and modified for flight.  Modifications include an
+EMI-reducing "Tempest" screen, a replaceable silver oxide battery, a clock
+reset circuit, a milled out foot, and the modem is removed.
+
+The original flight software configuration has been augmented since STS-9
+to satisfy expanding functional requirements levied on the SPoC.  The
+flight software configuration now includes programs that calculate and/or
+display the following data:
+
+          Predicted Site Acquisition Table
+          Table of TDRSS AOS/LOS
+          Communication/Earth Obs site reconfiguration
+          Latitude and longitude of the Orbiter
+          AOS of future earth observation sites
+          Time to Orbiter sunrise, noon, sunset
+          Current F stop
+          F stop for the selected earth observation site
+          Sun glint position on the world map
+          Sun glint look angles
+          Longitude and MET of the next/previous ascending node
+          Time until/from the next/previous ascending node
+          Deorbit opportunities
+          Deorbit maneuver targeting
+          Orbiter CG and weight
+          CG management procedures
+
+The SPoC has also been used to provide computational support for special
+purpose applications on a flight-specific basis.  The Orbital Refueling
+System (ORS) and the Gravity Gradient Free Drift experiments set a
+precedent for using microprocessors  to support payload experiments.
+
+Since 41-G, two SPoCs have been manifested for each Shuttle mission.  The
+primary unit is usually positioned on the forward flight deck above the
+eyebrow panel, while the backup nominally supports middeck operations.
+Even during emergency power-downs, one of these units remains running.
+
+
+"NONCRITICAL BUT MANDATORY"
+
+Although the SPoC was classified as noncritical hardware by Configuration
+Control Board Directive 1253, it is considered mandatory equipment.  If
+the SPoC fails, neither the crew nor the mission is threatened: thus the
+noncritical classification.  However, the SPoC is such an asset to the
+crew and to MCC that it is mandatory equipment for flight.
+
+The following excerpts from reports and memos illustrate the importance of
+the SPoC to Shuttle missions.
+
+"STS-9 Flight Crew Report" (Dec. 1983): "The SPoC proved to be a great
+asset.  It was unstowed and set up during the post insertion timeframe and
+remained active until deorbit prep... The SPoC allowed the crew to see
+where they were at all times and served as an accurate source of
+communications coverage information.  In light of the many dropouts of
+TDRSS S-Band signal that were experienced, the SPoC AOS/LOS information
+allowed the crew to manage the comm system in an efficient manner and
+eliminated unnecessary trouble shooting.  The SPoC appears to have great
+potential that deserves further development for future Shuttle missions."
+
+"Memo from the Space Shuttle Earth Observations Project Manager"
+(03/02/84, #SC5-84-32):  "The GRiD SPoC has been of great value to the
+Space Shuttle Earth Observations Project... Our contact with the crews
+that have used the SPoC ...reflect extreme interest in its present
+capabilities and proposed updates."
+
+The value of the SPoC in monitoring a payload was demonstrated for the
+STS-41G ORS test:
+
+"Memo from John Young" (04/18/84, #CB-84-042):  "The SPoC has been
+determined by the crew to be not just useful, but mandatory for proper
+crew monitoring of ORS hydrazine transfer operations.  It provides the
+proper displays that provide the crew their only insight into the
+hydrazine heat transfer occurring during an ORS transfer operation for all
+initial conditions.  Using the SPoC information and the other ORS displays
+and controls, timely and proper response can be made by the crew to any
+ORS anomaly."
+
+"STS-41G Debrief Notes" (10/18/84): "[The SPoC was] very helpful because
+no one had time to just sit by a window and watch for sites and
+phenomena."
+
+"STS-51C Crew Report": "The presence of SPoC on our mission was a major
+asset in helping us perform many of our tasks.  Future capabilities for
+SPoC will increase its utility even more...these computers have proven to
+be very reliable..."
+
+"Memo from On-Orbit Flight Techniques Panel" (01/25/88, #DA8- 88-04):
+"After reviewing the functions provided by the SPoC and assessing the
+significant degree of support it provides for routine flight crew
+operations, the FTP considers it to be a very important part of crew
+equipment and recommends the Program consider it to be 'mandatory' for all
+STS flights.
+
+"The FTP also recommends that the SPoC should continue to be classified as
+criticality 3.  These recommendations are based on two considerations.
+
+
+
+a) The primary SPoC function, that of an orbit trajectory status display,
+does not jeopardize the crew, vehicle, or mission in the event of
+malfunction.
+
+
+b) The secondary SPoC function of providing a backup deorbit targeting
+capability for emergency deorbit would only be used when the Mission
+Control Center is unavailable for Orbiter support and an immediate deorbit
+was required.  The probability of this happening is extremely remote
+because for every case except a large cabin leak, it takes multiple
+failures before this capability would be needed, and most of those
+combinations of failures, such as failure of both freon loops, are
+considered non-credible.
+
+
+"Retaining the SPoC's criticality 3 classification is highly desirable
+because it allows a flexible and rapid response to new requirements.  To
+retain these desirable characteristics, functions considered inappropriate
+for this classification should be integrated into other processors of an
+appropriate classification."
+
+
+
+
+APPENDIX F--GLOSSARY
+
+
+AOS: Acquisition of Signal
+
+Boot Cycle: Period during which the computer is loading the operating
+system and SPoC EXECUTIVE software.
+
+CG: Center of Gravity
+
+Choice Band: Rectangular area at the top of a form which will contain
+choices or pertinent information.
+
+Choices: Predefined values for a setting.
+
+Command Key: RETURN key, ESCAPE key, and any other keys that select a menu
+option.
+
+Confirm: Keyboard input of CODE-RETURN.
+
+Edit Prompt: A small triangular symbol which indicates a user input is
+expected.
+
+EMCC: Emergency Mission Control Center
+
+EMI: Electromagnetic Interference
+
+EPROM: Erasable Programmable Read Only Memory
+
+FDO: Flight Dynamics Officer
+
+Form: User interface display which allows the user to enter or edit data
+for one or more items.
+
+FRCS: Forward Reaction Control System
+
+GFE CCB: Government Furnished Equipment Configuration Control Board
+
+GMT: Greenwich Mean Time
+
+GNC: Guidance Navigation and Control
+
+GPC: General Purpose Computer
+
+Highlighted Box: If choices are available in the choice band, the
+highlighted box indicates the current choice or highlights pertinent
+information.
+
+ISP: Specific Impulse
+
+Item: Label which identifies the data to be modified in a form.
+
+LOS: Loss of Signal
+
+LOT: Landing Opportunities Table
+
+MCC: Mission Control Center
+
+Menu: User interface display which allows the user to select one of the
+available options.
+
+MET: Mission Elapsed Time
+
+MOC: Mission Operations Computer
+
+MOCR: Mission Operations Control Room
+
+Modifier Keys: CODE keys, SHIFT key, and CONTROL key.
+
+Nadir: Projection of the Orbiter's position along the local vertical onto
+the Earth's surface.
+
+OMS: Orbital Maneuvering System
+
+ORS: Orbital Refueling System
+
+PROM: Programmable Read Only Memory
+
+PSAT: Predicted Site Acquisition Table
+
+Prompt: Message informing the user what action should be taken next.
+
+PTI: Program Test Input
+
+RAM: Random Access Memory
+
+RCS: Reaction Control System
+
+RMS: Remote Manipulator System
+
+ROM: Read Only Memory
+
+RTS: Remote Tracking Station
+
+Selection Box: Rectangular outline enclosing the current item in a form or
+the current option in a menu.
+
+Setting: Data value in a form.
+
+SGMT: Simulated GMT
+
+SPEC: GPC display used to view and modify parameters.
+
+SPoC: Shuttle Portable Computer
+
+STDN: Spaceflight Tracking and Data Network
+
+TDR: True of Date Rotating
+
+TDRS: Tracking and Data Relay Satellite
+
+TDRSS: Tracking and Data Relay Satellite System
+
+TIG: Time of Ignition
+
+
+

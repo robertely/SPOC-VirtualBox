@@ -1,0 +1,56 @@
+Shuttle Portable Computer Software
+
+This is an edited version of the Shuttle ground track program used by
+the astronauts in flights aboard the Shuttle.  More complete documentation
+is provided in the self-extracting ZIP file.  If you don't have the hardware
+setup described below, it is likely that this program will not run for you.
+
+In keeping with the NASA Spacelink file naming convention, SPOCZIP.EXE is named
+9_11_4_17_3.BIN on the system.  Be sure to rename it SPOCZIP.EXE when you
+download it.  Begin by placing it in your C> root directory.
+
+To "unzip" the file, enter the following in your hard drive ROOT
+directory at the C> prompt and then press return:
+
+C> SPOCZIP -d
+
+Adding -d will cause the ZIP program to create a subdirectory named PROGRAMS
+and fill it with files.
+
+Orbital state vectors required for this program are available from NASA
+Spacelink for each non-classified Shuttle mission. Use the "M50 Elements"
+figures.  And remember that SPoC requires figures in thousands of feet.  The
+M50 elements on NASA Spacelink are normally given in feet.  Don't forget to
+move the decimal three places to the left before entering the figures into
+SPoC.
+
+The following hardware is required for proper operation of this program:
+
+     IBM PC or compatible WITH MATH CO-PROCESSOR INSTALLED!
+     Hard Drive at location C>
+     Minimum 512K available memory  NOTE:  If you are running software
+       (network software for example) that occupies enough memory to
+       leave less than 512K for SPoC, SPoC will very likely crash.
+
+GRID.EXE, SPOC.BAT, and the PROGRAMS subdirectory, must be located in the
+Drive C> ROOT directory.
+
+To run the SPoC program type SPOC at the C> prompt and press return.
+
+NOTE: The CODE key referred to in the documentation for this document is the
+      ALT key on IBM PC compatible computers.
+
+NOTE: SPoC was originally written for a GRID computer--not an IBM-PC.  Before
+      making SPoC available through NASA Spacelink, we tested it on a variety
+      of IBM-PC and compatible computer configurations with mixed results.  For
+      example, SPoC seemed to be running OK on one computer, but its VGA
+      display scrambled the screen making the program unreadable.  We suspect
+      that SPoC	is incompatible with VGA.  So if SPoC doesn't run on your
+      particular setup, try it on another computer.  We recommend CGA, but we
+      have seen the program run properly on EGA setups.
+
+AND A LAST NOTE:  Several people have reported receiving the error message
+      "Can't find file EMULATOR.SHR"   This is the error message you'll receive
+      when you try to run the program without a math co-processor.  
+
+
